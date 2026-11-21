@@ -1,0 +1,13 @@
+# ============================================================================
+# dsh-approval-bubble 的 bundle patch —— 把插件挂进 DSH 配置树
+# ============================================================================
+#
+# 每个 entry 有 id（行标识，patch 覆盖时按它定位）和 name（插件模块名）。
+# name 解析包的入口 lib/index.js（宿主半侧）；包里的 dsh.client 声明同时把
+# lib/client.js 交给浏览器模块系统，按 /plugins/dsh-approval-bubble/client.js 提供。
+#
+# 插件行那一行（"id: 值"）不能写行尾注释：商城预检按行抓 entry ID。
+
+- insert:
+    - id: dsh-approval-bubble
+      name: 'dsh-approval-bubble'
