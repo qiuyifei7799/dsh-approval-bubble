@@ -1,0 +1,60 @@
+{
+  "name": "dsh-approval-bubble",
+  "version": "0.1.0",
+  "description": "Floating approval bubble for DeepSeek Harness: shows the exact command an agent wants to run and lets you allow once or reject with one click.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "approval",
+    "permission",
+    "sandbox",
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiuyifei7799/dsh-approval-bubble.git"
+  },
+  "homepage": "https://github.com/qiuyifei7799/dsh-approval-bubble#readme",
+  "bugs": {
+    "url": "https://github.com/qiuyifei7799/dsh-approval-bubble/issues"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.2-rc.1": "compatible"
+      }
+    }
+  }
+}
